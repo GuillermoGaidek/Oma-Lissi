@@ -1,6 +1,5 @@
 -Ver como solucionar que los articles se me alargan mucho por el flex item(aside) de al lado.
 -Ver que propiedad hace que el aside cuando pasa para abajo se hace del width de todo el contendor..?
--Minuto 7 del video para terminar flexbox project
--terminar de ver media queries bien.Bajar ejercicios de pablo
+-terminar de ver media queries bien.Bajar ejercicios de pablo.Hacer practica.Mejorar proyecto.
 
 >El problema de la barra aside mini es porque las dos cajas principales (aside y articles) tienen auto y se van a disputar el ancho total entre ellas, entnces se van a ajustar al ancho del contenido que tengan. Y en articles el contenido tiene un basis de 45% y en aside un width del 100% entnces va a llenar el 100% de lo que dejen los article que serian un 90%. Si les saco el auto a articles y aside las dos cajas van a ocupar el 50%.

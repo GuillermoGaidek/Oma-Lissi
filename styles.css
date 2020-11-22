@@ -139,7 +139,7 @@ a{
                 flex: 1 1 100%;
             }
         .aside{
-            flex:1 1 0%;
+            flex:0.6 1 0%;
             margin: 10px 5px 10px 0;
         }
             .aside img{
