@@ -3,6 +3,4 @@
 >El problema de que los articles se alargaban mucho es por la relacion que tenia con el aside. Modificando la relacion del aside a un poco mas chica (2 contra 0.6). Asi se achico y los articles quedaron bien. 
 Otra manera seria hacer los articles mas idependientes adentro de algun otro div y que lo que se alargue sea la seccion de articles y no cada article, como pasa con el aside si alargo los articles que se me alarga como el fondo del aside y no cada item de adentro.
 
->-Ver que propiedad hace que el aside cuando pasa para abajo se hace del width de todo el contendor..?
 
->-Terminar de ver video.
