@@ -1,58 +1,58 @@
 module.exports = (sequelize,dataTypes)=>{
-	let alias = "reserva";
+	let alias = "reservaTieneCabaña";
 	let cols = {
 		cod_reserva: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: false,
             comment: null,
             field: "cod_reserva"
         },
-        dni: {
+        cod_cabaña: {
+            type: DataTypes.INTEGER(11),
+            allowNull: false,
+            defaultValue: null,
+            primaryKey: true,
+            autoIncrement: false,
+            comment: null,
+            field: "cod_cabaña"
+        },
+        cant_personas: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
             autoIncrement: false,
             comment: null,
-            field: "dni"
+            field: "cant_personas"
         },
-        monto_total: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false,
-            defaultValue: null,
-            primaryKey: false,
-            autoIncrement: false,
-            comment: null,
-            field: "monto_total"
-        },
-        monto_seña: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false,
-            defaultValue: null,
-            primaryKey: false,
-            autoIncrement: false,
-            comment: null,
-            field: "monto_seña"
-        },
-        fecha_creacion_reserva: {
+        fecha_entrada: {
             type: DataTypes.DATEONLY,
-            allowNull: true,
+            allowNull: false,
             defaultValue: null,
             primaryKey: false,
             autoIncrement: false,
             comment: null,
-            field: "fecha_creacion_reserva"
+            field: "fecha_entrada"
+        },
+        fecha_salida: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            defaultValue: null,
+            primaryKey: false,
+            autoIncrement: false,
+            comment: null,
+            field: "fecha_salida"
         }
 	};
 	let config = {
-		tableName: "reservas",
+		tableName: "reserva_tiene_cabaña",
 		timestamps: false
 	};
 	
-	const reserva = sequelize.define(alias,cols,config);
+	const reservaTieneCabaña = sequelize.define(alias,cols,config);
 	
 	Pelicula.associate=function(models){  //aca van las relaciones. Hay que configurarlo en el codigo de las 2 tablas. En la otra ira lo contrario a esta.
 		Pelicula.belongsTo(models.Generos,{
@@ -61,5 +61,5 @@ module.exports = (sequelize,dataTypes)=>{
 		})
 	}
 	
-	return reserva;
+	return reservaTieneCabaña;
 }
