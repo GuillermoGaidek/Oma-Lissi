@@ -1,5 +1,5 @@
 module.exports = (sequelize,dataTypes)=>{
-	let alias = "cliente";
+	let alias = "Cliente";
 	let cols = {
 		dni: {
 			type: DataTypes.INTEGER(11),
@@ -79,14 +79,11 @@ module.exports = (sequelize,dataTypes)=>{
 			timestamps: false
 	};
 	
-	const cliente = sequelize.define(alias,cols,config);
+	const Cliente = sequelize.define(alias,cols,config);
 	
-	Pelicula.associate=function(models){  //aca van las relaciones. Hay que configurarlo en el codigo de las 2 tablas. En la otra ira lo contrario a esta.
-		Pelicula.belongsTo(models.Generos,{
-			as: "generos",
-			foreignkey: "genre_id"
-		})
+	Cliente.associate=function(models){ 
+		Cliente.hasMany(models.Reserva,{as: "Reservas",foreignkey: "dni"})
 	}
 	
-	return cliente;
+	return Cliente;
 }

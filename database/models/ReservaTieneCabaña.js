@@ -1,7 +1,7 @@
 module.exports = (sequelize,dataTypes)=>{
-	let alias = "reservaTieneCabaña";
+	let alias = "ReservaTieneCabaña";
 	let cols = {
-		cod_reserva: {
+		/*cod_reserva: { //Deberia agregar automagicamente las PK de las otras tablas
             type: DataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
@@ -18,7 +18,7 @@ module.exports = (sequelize,dataTypes)=>{
             autoIncrement: false,
             comment: null,
             field: "cod_cabaña"
-        },
+        },*/
         cant_personas: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -48,18 +48,11 @@ module.exports = (sequelize,dataTypes)=>{
         }
 	};
 	let config = {
-		tableName: "reserva_tiene_cabaña",
+		tableName: "reservas_tiene_cabañas",
 		timestamps: false
 	};
 	
-	const reservaTieneCabaña = sequelize.define(alias,cols,config);
+	const ReservaTieneCabaña = sequelize.define(alias,cols,config);
 	
-	Pelicula.associate=function(models){  //aca van las relaciones. Hay que configurarlo en el codigo de las 2 tablas. En la otra ira lo contrario a esta.
-		Pelicula.belongsTo(models.Generos,{
-			as: "generos",
-			foreignkey: "genre_id"
-		})
-	}
-	
-	return reservaTieneCabaña;
+	return RseservaTieneCabaña;
 }

@@ -1,5 +1,5 @@
 module.exports = (sequelize,dataTypes)=>{
-	let alias = "cabaña";
+	let alias = "Cabaña";
 	let cols = {
 		cod_cabaña: {
 			type: DataTypes.INTEGER(11),
@@ -25,14 +25,12 @@ module.exports = (sequelize,dataTypes)=>{
 		timestamps: false
 	};
 	
-	const cabaña = sequelize.define(alias,cols,config);
+	const Cabaña = sequelize.define(alias,cols,config);
 	
-	Pelicula.associate=function(models){  //aca van las relaciones. Hay que configurarlo en el codigo de las 2 tablas. En la otra ira lo contrario a esta.
-		Pelicula.belongsTo(models.Generos,{
-			as: "generos",
-			foreignkey: "genre_id"
-		})
+	Cabaña.associate=function(models){
+		Cabaña.belongsToMany(models.Reserva,{through: models.ReservaTieneCabaña,
+			as: "TieneReservas"});
 	}
 	
-	return cabaña;
+	return Cabaña;
 }
