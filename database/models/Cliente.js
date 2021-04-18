@@ -2,7 +2,7 @@ module.exports = (sequelize,dataTypes)=>{
 	let alias = "Cliente";
 	let cols = {
 		dni: {
-			type: DataTypes.INTEGER(11),
+			type: dataTypes.INTEGER(11),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "dni"
 		},
 		nombre: {
-			type: DataTypes.STRING(45),
+			type: dataTypes.STRING(45),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: false,
@@ -20,7 +20,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "nombre"
 		},
 		apellido: {
-			type: DataTypes.STRING(45),
+			type: dataTypes.STRING(45),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: false,
@@ -29,7 +29,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "apellido"
 		},
 		telefono: {
-			type: DataTypes.INTEGER(11),
+			type: dataTypes.INTEGER(11),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: false,
@@ -38,7 +38,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "telefono"
 		},
 		mail: {
-			type: DataTypes.STRING(45),
+			type: dataTypes.STRING(45),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: false,
@@ -47,7 +47,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "mail"
 		},
 		ocupacion: {
-			type: DataTypes.STRING(45),
+			type: dataTypes.STRING(45),
 			allowNull: true,
 			defaultValue: null,
 			primaryKey: false,
@@ -56,7 +56,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "ocupacion"
 		},
 		descripcion: {
-			type: DataTypes.STRING(45),
+			type: dataTypes.STRING(45),
 			allowNull: true,
 			defaultValue: null,
 			primaryKey: false,
@@ -65,7 +65,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "descripcion"
 		},
 		cuenta_bancaria: {
-			type: DataTypes.INTEGER(11),
+			type: dataTypes.INTEGER(11),
 			allowNull: true,
 			defaultValue: null,
 			primaryKey: false,

@@ -2,7 +2,7 @@ module.exports = (sequelize,dataTypes)=>{
 	let alias = "Cabaña";
 	let cols = {
 		cod_cabaña: {
-			type: DataTypes.INTEGER(11),
+			type: dataTypes.INTEGER(11),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = (sequelize,dataTypes)=>{
 			field: "cod_cabaña"
 		},
 		capacidad: {
-			type: DataTypes.INTEGER(11),
+			type: dataTypes.INTEGER(11),
 			allowNull: false,
 			defaultValue: null,
 			primaryKey: false,

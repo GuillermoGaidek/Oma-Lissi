@@ -2,7 +2,7 @@ module.exports = (sequelize,dataTypes)=>{
 	let alias = "Reserva";
 	let cols = {
 		cod_reserva: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "cod_reserva"
         },
         dni: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
@@ -20,7 +20,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "dni"
         },
         monto_total: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
@@ -29,7 +29,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "monto_total"
         },
         monto_seña: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
@@ -38,7 +38,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "monto_seña"
         },
         fecha_creacion_reserva: {
-            type: DataTypes.DATEONLY,
+            type: dataTypes.DATEONLY,
             allowNull: true,
             defaultValue: null,
             primaryKey: false,

@@ -2,7 +2,7 @@ module.exports = (sequelize,dataTypes)=>{
 	let alias = "ReservaTieneCabaña";
 	let cols = {
 		/*cod_reserva: { //Deberia agregar automagicamente las PK de las otras tablas
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "cod_reserva"
         },
         cod_cabaña: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: true,
@@ -20,7 +20,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "cod_cabaña"
         },*/
         cant_personas: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
@@ -29,7 +29,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "cant_personas"
         },
         fecha_entrada: {
-            type: DataTypes.DATEONLY,
+            type: dataTypes.DATEONLY,
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
@@ -38,7 +38,7 @@ module.exports = (sequelize,dataTypes)=>{
             field: "fecha_entrada"
         },
         fecha_salida: {
-            type: DataTypes.DATEONLY,
+            type: dataTypes.DATEONLY,
             allowNull: false,
             defaultValue: null,
             primaryKey: false,
