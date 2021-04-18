@@ -54,5 +54,5 @@ module.exports = (sequelize,dataTypes)=>{
 	
 	const ReservaTieneCabaña = sequelize.define(alias,cols,config);
 	
-	return RseservaTieneCabaña;
+	return ReservaTieneCabaña;
 }
