@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>hola</title>
-  </head>
-  <body>
-    <%= reservas[0].monto_seña %> 
-  </body>
-</html>
+<%- include("header") -%>
+  <% for(let reserva of reservas){ %>
+    <% for(let reservaOb in reserva){ %>
+      <%= reserva[reservaOb]; %>
+      <% } %>
+ <% } %>
+<%- include("footer") -%>

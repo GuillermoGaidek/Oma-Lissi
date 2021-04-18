@@ -23,7 +23,7 @@ a{
     flex-wrap: nowrap;
 }
     .header{
-        background: url(img/43398.png);
+        background: url(/images/43398.png);
         background-position: center;
         background-size: cover;
         display: flex;
