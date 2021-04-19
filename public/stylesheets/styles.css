@@ -172,6 +172,9 @@ a{
         display: flex;
         justify-content: center;
         margin-top: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
         .nav-footer{
             text-align: center;
