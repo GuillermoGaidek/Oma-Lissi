@@ -6,6 +6,10 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
 }
 
 a{
@@ -17,11 +21,6 @@ a{
     padding: 0 50px;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
     .header{
         background: url(/images/43398.png);
         background-position: center;
