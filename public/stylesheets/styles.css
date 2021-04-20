@@ -20,9 +20,17 @@ a{
 .inner-margin{
     padding: 0 50px;
 }
-
-    .header{
+    .header-home{
         background: url(/images/43398.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: 5px;
+    }
+    .header{
+        background: url(/images/2.png);
         background-position: center;
         background-size: cover;
         display: flex;
@@ -33,22 +41,28 @@ a{
         .menu{
             background: rgba(0,0,0,.1);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 60px;
+            height: 80px;
             border-bottom: 1px solid rgba(255,255,255,.5);
         }
-            .logo{
-                flex:1 1 auto;
+            #logoimg{
+                width:90%;
             }
+                
                 .logo a{
                     color: #fff;
                     text-decoration: none;
-                    font-size: 30px;
+                    font-size: 23px;
                 }
                 .logo a:hover{
-                    color:#343434;
+                    color:#a7a2a2;
                 }
+
+                .logo-home a:hover{
+                    color:#4e4d4d;
+                }
+
             .nav{
                 flex: 5 1 auto;
                 display: flex;
@@ -63,8 +77,13 @@ a{
                     letter-spacing: 2px;
                 }
                 .nav a:hover{
-                    color:#343434;
+                    color:#a7a2a2;
                 }
+
+                .nav-home a:hover{
+                    color:#4e4d4d;
+                }
+
             .social{
                 flex: 1 1 auto;
             }
@@ -73,9 +92,10 @@ a{
                     color:#fff;
                     padding:0 5px;
                 }
-                .social a:hover{
-                    color:#343434;
+                .social-home a:hover{
+                    color:#4e4d4d;
                 }
+                
         .main-text{
             height: 400px;
             display: flex;
@@ -167,12 +187,21 @@ a{
                 }*/
 
 
+    .footer-home{
+        background: #000;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        bottom: 0;
+        width: 100%;
+    }
+
     .footer{
         background: #000;
         display: flex;
         justify-content: center;
         margin-top: 5px;
-        position: fixed;
+        position:fixed;
         bottom: 0;
         width: 100%;
     }
