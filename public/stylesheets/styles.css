@@ -49,6 +49,10 @@ a{
             #logoimg{
                 width:90%;
             }
+            #logoimg-home{
+                width:90%;
+                opacity: .8;
+            }
                 
                 .logo a{
                     color: #fff;

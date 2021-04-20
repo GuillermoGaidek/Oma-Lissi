@@ -3,6 +3,9 @@ var router = express.Router();
 var reservasController = require("../controllers/reservasController");
 
 // Create
-router.get("/crear",reservasController.crear);//pongo el get primero porque tiene que ver los campos etc. Despues el post.
+router.get("/crear",reservasController.mostrar);
+router.post("/crear",reservasController.crear);
+
+
 
 module.exports = router;
