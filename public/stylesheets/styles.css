@@ -46,7 +46,7 @@ a{
             border-bottom: 1px solid rgba(255,255,255,.5);
         }
         .menu{
-            background: rgba(72, 103, 110, 0.5);
+            background: rgba(72, 103, 110, 0.466);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -116,7 +116,7 @@ a{
             padding: 0px 0px;
         }
         .main-text > h1{
-                background: rgba(99, 99, 100, 0.349);
+                background: rgba(68, 68, 68, 0.5);
                 font-family: 'Lora', serif;;
                 font-size: 18px;
                 color: rgb(255, 255, 255);
