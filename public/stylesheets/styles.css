@@ -38,7 +38,7 @@ a{
         margin-bottom: 5px;
    }
         .menu-home{
-            background: rgba(184, 194, 197, 0.24);
+            background: rgba(219, 223, 224, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,7 +46,7 @@ a{
             border-bottom: 1px solid rgba(255,255,255,.5);
         }
         .menu{
-            background: rgba(72, 103, 110, 0.466);
+            background: rgba(118, 121, 121, 0.578);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,10 +55,13 @@ a{
         }
             #logoimg{
                 width:90%;
+                position: relative;
+                top: 5px;
             }
             #logoimg-home{
+                position: relative;
+                top: 5px;
                 width:90%;
-                opacity: .8;
             }
                 
                 .logo a{
@@ -67,7 +70,7 @@ a{
                     font-size: 23px;
                 }
                 .logo a:hover{
-                    color:#a7a2a2;
+                    color:#9b9797;
                 }
 
                 .logo-home a:hover{
@@ -89,26 +92,63 @@ a{
                 }
 
                 .nav a:hover{
+                    color:#686565;
+                }
+                
+                .nav-home a:hover{
                     color:#7c7a7a;
                 }
 
-            .social{
-                flex: 1 1 auto;
-            }
-                .social a{
-                    font-size: 18px;
+                .user{
+                    flex: 1 1 auto;
+                    flex-direction: column;
                     color:#fff;
-                    padding:0 5px;
+                }
+                #user-icon{
+                    font-size: 32px;
+                    position: absolute;
+                    right: 98px;
+                    top: 8px;
+                    color:#fff; 
+                }
+                #user-icon-home{
+                    font-size: 32px;
+                    position: absolute;
+                    right: 98px;
+                    top: 8px;
+                    color:#fff; 
+                }
+
+                .inses{
+                    color: #fff;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    top: 45px;
+                    right: 55px;
+                    position: absolute;
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                }
+
+                .reg{
+                    color: #fff;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    top: 62px;
+                    right: 62px;
+                    position: absolute;
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                }
+
+                .user p:hover{
+                    color:#c7c4c4;
                 }
                 
-                .social a:hover{
+                .user-home p:hover{
                     color:#4e4d4d;
                 }
 
-                .social-home a:hover{
-                    color:#4e4d4d;
-                }
-                
         .main-text{
             height: 400px;
             display: flex;
@@ -143,26 +183,40 @@ a{
                 margin: 5px;
                 background: #ececec;
             }
+                .sub-art{
+                    display: flex;
+                    justify-content:space-between;
+                    flex-flow: row wrap;
+                }
+
+                .sub-art > a{
+                    flex: 0 1 auto;
+                }
+
                 .article > img{
                     width:100%;
                 }
-                .article > a{
+                .article a{
                     display: inline-block;
                     color: #fff;
                     font-size: 13px;
                     padding: 10px;
                     background: #000;
-                    margin: 10px 0;
+                    margin: 0 0 6px 6px;
                 }
-                .article > a:hover{
-                    background: #546cc3;
+                .article a:hover{
+                    background: #5c5c5bc2;
                 }
 
-                .article > h2{
+                .article h2{
                     font-size: 25px;
                     text-transform: uppercase;
-                    padding: 0px 0 10px 0;
+                    padding: 6px;
                     color: rgb(0, 0, 0);
+                }
+
+                .article p{
+                    margin:6px;
                 }
 
         .aside{
@@ -197,6 +251,24 @@ a{
         bottom: 0;
         width: 100%;
     }
+
+    .social{
+        flex: 1 1 auto;
+    }
+        .social a{
+            font-size: 18px;
+            color:#fff;
+            padding:0 5px;
+        }
+        
+        .social a:hover{
+            color:#4e4d4d;
+        }
+
+        .social-home a:hover{
+            color:#4e4d4d;
+        }
+
         .nav-footer{
             text-align: center;
         }
@@ -208,6 +280,9 @@ a{
             letter-spacing: 2px;
         }
 
+        .nav-footer a:hover{
+            color:#4e4d4d;
+        }
 
 @media (max-width: 1000px){
     .section,.menu{
