@@ -55,6 +55,15 @@ module.exports = (sequelize,dataTypes)=>{
 			comment: null,
 			field: "contraseña"
 		},
+		fecha_creacion_cliente: {
+			type: dataTypes.DATEONLY,
+			allowNull: false,
+			defaultValue: null,
+			primaryKey: false,
+			autoIncrement: false,
+			comment: null,
+			field: "fecha_creacion_cliente"
+		},
 		ocupacion: {
 			type: dataTypes.STRING(45),
 			allowNull: true,
