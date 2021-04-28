@@ -2,16 +2,16 @@
 <h1>Registrarse</h1>
 <form action="/usuarios/register" method="POST">
   <div>
+    <label for="">DNI</label>
+    <input type="number" name="dni">
+  </div>
+  <div>
     <label for="">Nombre</label>
     <input type="text" name="nombre">
   </div>
   <div>
     <label for="">Apellido</label>
     <input type="text" name="apellido">
-  </div>
-  <div>
-    <label for="">DNI</label>
-    <input type="number" name="dni">
   </div>
   <div>
     <label for="">Email</label>
@@ -29,4 +29,8 @@
     <label for="">Contraseña</label>
     <input type="password" name="contraseña">
   </div>
+  <div>
+    <button type="submit">Registrarse</button>
+  </div>
+</form>
 <%- include("footer") -%>

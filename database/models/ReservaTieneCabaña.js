@@ -1,7 +1,7 @@
 module.exports = (sequelize,dataTypes)=>{
 	let alias = "ReservaTieneCabaña";
 	let cols = {
-		/*cod_reserva: { //Deberia agregar automagicamente las PK de las otras tablas
+		/*cod_reserva: { //Deberia agregarse automaticamente por las tablas through
             type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
@@ -10,7 +10,7 @@ module.exports = (sequelize,dataTypes)=>{
             comment: null,
             field: "cod_reserva"
         },
-        cod_cabaña: {
+        cod_cabaña: { //Deberia agregarse automaticamente por las tablas through
             type: dataTypes.INTEGER(11),
             allowNull: false,
             defaultValue: null,
