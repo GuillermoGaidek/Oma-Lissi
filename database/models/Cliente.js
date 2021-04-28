@@ -46,6 +46,15 @@ module.exports = (sequelize,dataTypes)=>{
 			comment: null,
 			field: "mail"
 		},
+		contraseña: {
+			type: dataTypes.STRING(45),
+			allowNull: false,
+			defaultValue: null,
+			primaryKey: false,
+			autoIncrement: false,
+			comment: null,
+			field: "contraseña"
+		},
 		ocupacion: {
 			type: dataTypes.STRING(45),
 			allowNull: true,

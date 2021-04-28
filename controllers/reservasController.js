@@ -2,17 +2,14 @@ let db = require("../database/models");
 const { QueryTypes } = require("sequelize");
 
 let reservasController = {
-    mostrar: async function(req,res) {
-        /*let sqlCliente = "SELECT dni,nombre,apellido,telefono,mail,ocupacion,cuenta_bancaria FROM oma_lissi.clientes WHERE email = ???req.deDondeSacoElMail???";
-        const datosCliente= await db.sequelize.query(sqlCliente,{type: QueryTypes.SELECT});
-        console.log(datosCliente);*/
-        return res.render("crearReservas")//,{datosCliente:datosCliente});
+    mostrar: function(req,res) {
+        return res.render("crearReservas");
     },
-    crear: async function(req,res) {
-        let sql = "INSERT INTO oma_lissi.reservas (dni,monto_total,monto_seña,fecha_creacion_reserva) VALUES ('???db.dni???', '3333', '222', '???currentData???');";
-        const reservas= await db.sequelize.query(sql,{type: QueryTypes.CREATE});
+    guardar: async function(req,res) {
+        let sql = "INSERT INTO oma_lissi.reservas () VALUES ();";
+        const reservas= await db.sequelize.query(sql,{type: QueryTypes.INSERT});
         console.log(reservas);
-        res.redirect("/reservas/crear");
+        res.render("reservaCreada");//poner en la vista como un resumen: REserva creada con exito. Idreserva,fecha creacion,dni,nombre,apellido,telefono,email,ocupacion,desde,hasta,cantidad personas
     }
 }
 

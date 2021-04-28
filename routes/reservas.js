@@ -4,7 +4,7 @@ var reservasController = require("../controllers/reservasController");
 
 // Create
 router.get("/crear",reservasController.mostrar);
-router.post("/crear",reservasController.crear);
+router.post("/crear",reservasController.guardar);
 
 
 
