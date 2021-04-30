@@ -2,8 +2,8 @@ let db = require("../database/models");
 const { QueryTypes } = require("sequelize");
 
 let usuariosController = {
-    mostrar: function(req,res) {
-        return res.render("registrarUsuario");
+    registrar: function(req,res) {
+        res.render("registrarUsuario");
     },
     guardar: async function(req,res) {
         let today = new Date().toISOString().slice(0, 10) //fecha de hoy en formato SQL
@@ -11,8 +11,29 @@ let usuariosController = {
         
         const registarse= await db.sequelize.query(sql,{type: QueryTypes.INSERT});//poner en estructura try catch
 
-        res.render("usuarioCreado");//poner en la vista: Usuario creado con exito.
+        res.render("usuarioCreado");
+    },
+    login: function(req,res) {
+        res.render("login");
+    },
+    validarLogin: async function(req,res) {
+        let sql = `SELECT mail,contraseña FROM oma_lissi.clientes WHERE mail='${req.body.email}' and contraseña = '${req.body.contraseña}';`;
+
+        const ingreso= await db.sequelize.query(sql,{type: QueryTypes.SELECT});//poner en estructura try catch
+
+        console.log(ingreso);
+
+        if(ingreso.length == 1){
+            req.session.usuarioLogeado = ingreso[0].mail;
+            res.send("mostrar perfil con CRUD");
+            console.log(req.session.usuarioLogeado);
+        }else{
+            res.render("login",{errors:[
+                {msg: "Credenciales inválidas"}
+            ]});
+        }
+        
+        
     }
 }
-
 module.exports = usuariosController;

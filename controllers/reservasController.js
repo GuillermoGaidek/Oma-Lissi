@@ -3,7 +3,7 @@ const { QueryTypes } = require("sequelize");
 
 let reservasController = {
     mostrar: function(req,res) {
-        return res.render("crearReservas");
+        res.render("crearReservas");
     },
     guardar: async function(req,res) {
         let sql = "INSERT INTO oma_lissi.reservas () VALUES ();";

@@ -1,0 +1,26 @@
+<%- include("header") -%>
+
+<h1>Iniciar Sesión</h1>
+
+<% if(typeof errors != "undefined"){ %> 
+  <ul>
+    <% for(let i=0;i<errors.length;i++){ %> 
+      <li style="color: red;"><%= errors[i].msg %></li>
+    <% } %> 
+  </ul>    
+<% } %> 
+
+<form action="/usuarios/login" method="POST">
+  <div>
+    <label for="">Email</label>
+    <input type="email" name="email">
+  </div>
+  <div>
+    <label for="">Contraseña</label>
+    <input type="password" name="contraseña">
+  </div>
+  <div>
+    <button type="submit">Ingresar</button>
+  </div>
+</form>
+<%- include("footer") -%>

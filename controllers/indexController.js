@@ -3,7 +3,7 @@ const { QueryTypes } = require("sequelize");
 
 let indexController = {
     mostrar: function(req,res) {
-        return res.render("index");
+        res.render("index");
     }
 }
 
