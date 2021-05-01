@@ -1,0 +1,10 @@
+<%- include("header") -%>
+    <h1>Tus reservas</h1>
+    <ul>
+        <% for(let i=0;i<listado.length;i++){ %> 
+            <a href="/reservas/listado/<%= listado[i].cod_reserva %>">
+                <li><%= listado[i].cod_reserva %></li>
+            </a>
+        <% } %> 
+    </ul>
+<%- include("footer") -%></div>

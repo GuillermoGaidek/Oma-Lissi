@@ -1,0 +1,12 @@
+<%- include("header") -%>
+    <h1>Reserva <%= detalle[0].cod_reserva %></h1>
+    <ul>
+        <li>Código de reserva: <%= detalle[0].cod_reserva %></li>
+        <li>Fecha de entrada: <%= detalle[0].fecha_entrada %></li>
+        <li>Fecha de salida: <%= detalle[0].fecha_salida %></li>
+        <li>Cantidad de Personas:<%= detalle[0].cant_personas %></li>
+        <li>Monto Total: <%= detalle[0].monto_total %></li>
+        <li>Seña: <%= detalle[0].monto_seña %></li>
+        <li>Fecha de creación: <%= detalle[0].fecha_creacion_reserva %></li>
+    </ul>
+<%- include("footer") -%></div>
