@@ -24,8 +24,12 @@
             </div>
             <div class="user">
                 <i id="user-icon" class="far fa-user-circle"></i>
-                <a href="/usuarios/login"><p class="inses">Iniciar sesión</p></a>
-                <a href="/usuarios/register"><p class="reg">Registrarse</p></a>
+                <% if(typeof usuarioLogeado == "undefined"){ %> 
+                    <a href="/usuarios/login"><p class="inses">Iniciar sesión</p></a>
+                    <a href="/usuarios/register"><p class="reg">Registrarse</p></a>
+                <% }else{ %> 
+                    <a href="/usuarios/perfil"><p class="perfil">Mi Perfil</p></a>
+                <% } %>
             </div>
         </div>
     </header>

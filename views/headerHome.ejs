@@ -23,8 +23,13 @@
             </div>
             <div class="user user-home">
                 <i id="user-icon-home" class="far fa-user-circle"></i>
-                <a href="/usuarios/login"><p class="inses">Iniciar sesión</p></a>
-                <a href="/usuarios/register"><p class="reg">Registrarse</p></a>
+                <% console.log(usuarioLogeado); %> 
+                <% if(typeof usuarioLogeado == "undefined"){ %> 
+                    <a href="/usuarios/login"><p class="inses">Iniciar sesión</p></a>
+                    <a href="/usuarios/register"><p class="reg">Registrarse</p></a>
+                <% }else{ %> 
+                    <a href="/usuarios/perfil"><p class="perfil">Mi Perfil</p></a>
+                <% } %>
             </div>
         </div>
         <div class="main-text">
