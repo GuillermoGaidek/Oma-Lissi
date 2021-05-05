@@ -7,7 +7,6 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var reservasRouter = require('./routes/reservas');
 var usuariosRouter = require('./routes/usuarios');
-
 var app = express();
 
 // view engine setup

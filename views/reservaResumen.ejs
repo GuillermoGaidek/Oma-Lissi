@@ -1,0 +1,10 @@
+<%- include("header") -%>
+<h1>RESERVAR</h1>
+<form action="/reservas/crearResumen" method="POST">
+  <p>Monto total: <%= montoTotal %>  </p>
+  <p>Seña: <%= montoSeña %> </p>
+  <div>
+    <button type="submit">Confirmar</button>
+  </div>
+</form>
+<%- include("footer") -%>

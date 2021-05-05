@@ -6,6 +6,7 @@ var logMiddle = require('../middlewares/LogMiddleware');
 // Create
 router.get("/crear",logMiddle,reservasController.mostrar);
 router.post("/crear",logMiddle,reservasController.guardar);
+router.post("/crearResumen",logMiddle,reservasController.confirmar);
 
 // Read
 router.get("/listado",logMiddle,reservasController.listar);
