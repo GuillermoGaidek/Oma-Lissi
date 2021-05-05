@@ -12,7 +12,7 @@ let reservasController = {
         const obtenerDni= await db.sequelize.query(sql0,{type: QueryTypes.SELECT});
         console.log(obtenerDni);
 
-        let sql1 = `INSERT INTO oma_lissi.reservas (dni,monto_total,monto_seña,fecha_creacion_reserva) VALUES (${obtenerDni[0].dni},1000,200,${today});`;
+        let sql1 = `INSERT INTO oma_lissi.reservas (dni,monto_total,monto_seña,fecha_creacion_reserva) VALUES (${obtenerDni[0].dni},1000,200,'${today}');`;
         const insertRes= await db.sequelize.query(sql1,{type: QueryTypes.INSERT});
         console.log(insertRes);
 
