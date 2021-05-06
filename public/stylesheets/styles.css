@@ -20,7 +20,7 @@ a{
     padding: 0 50px;
 }
     .header-home{
-        background: url(/images/43398.png);
+        background: url(/images/f1.png);
         background-position:center;
         background-size: cover;
         display: flex;
@@ -38,7 +38,7 @@ a{
         margin-bottom: 5px;
    }
         .menu-home{
-            background: rgba(219, 223, 224, 0.2);
+            background: rgba(131, 124, 124, 0.349);
             display: flex;
             justify-content: space-between;
             align-items: center;
