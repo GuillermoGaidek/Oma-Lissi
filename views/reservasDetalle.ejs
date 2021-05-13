@@ -1,5 +1,10 @@
 <%- include("header") -%>
-    <h1>Reserva <%= detalle[0].cod_reserva %></h1>
+
+<% if(justCreated == true){ %>
+    <h1>Reserva creada exitosamente!</h1>
+<% } %>
+
+<h1>Código de reserva <%= detalle[0].cod_reserva %></h1>
     <ul>
         <li>Fecha de entrada: <%= detalle[0].fecha_entrada %></li>
         <li>Fecha de salida: <%= detalle[0].fecha_salida %></li>

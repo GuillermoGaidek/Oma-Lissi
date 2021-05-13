@@ -42,9 +42,8 @@ let reservasController = {
         let sql3 = `INSERT INTO oma_lissi.reservas_tiene_cabañas VALUES (${obtenerCodRes[0].cod_reserva},1,${req.session.cantidadPersonas},'${req.session.desde}','${req.session.hasta}');`;
         const insertResCab= await db.sequelize.query(sql3,{type: QueryTypes.INSERT});
         console.log(insertResCab);
-        
-        res.render("reservaCreada",{usuarioLogeado: req.session.usuarioLogeado});
-        //poner en la vista un resumen: Reserva creada con exito. Idreserva,fecha creacion,dni,nombre,apellido,telefono,email,ocupacion,desde,hasta,cantidad personas
+        req.session.justCreated = true;
+        res.redirect(`/reservas/listado/${obtenerCodRes[0].cod_reserva}`);
     },
     listar: async function(req,res){
         let sql = `SELECT r.cod_reserva FROM oma_lissi.reservas as r LEFT JOIN oma_lissi.clientes as c on r.dni=c.dni WHERE c.mail = '${req.session.usuarioLogeado}';`;
@@ -60,7 +59,11 @@ let reservasController = {
         WHERE r.cod_reserva = ${req.params.id};`;
         const detalle= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
         console.log(detalle);
-        res.render("reservasDetalle",{detalle:detalle,usuarioLogeado: req.session.usuarioLogeado});
+        
+        let justCreated = req.session.justCreated;
+        req.session.justCreated = false;
+
+        res.render("reservasDetalle",{detalle:detalle,usuarioLogeado: req.session.usuarioLogeado, justCreated: justCreated});
     }
 }
 

@@ -107,21 +107,21 @@ a{
                 #user-icon{
                     font-size: 32px;
                     position: absolute;
-                    right: 98px;
+                    right: 102px;
                     top: 8px;
                     color:#fff; 
                 }
                 #user-icon-home{
                     font-size: 32px;
                     position: absolute;
-                    right: 98px;
+                    right: 102px;
                     top: 8px;
                     color:#fff; 
                 }
 
                 .inses{
                     color: #fff;
-                    font-size: 11px;
+                    font-size: 13px;
                     text-transform: uppercase;
                     top: 45px;
                     right: 55px;
@@ -132,7 +132,7 @@ a{
 
                 .reg{
                     color: #fff;
-                    font-size: 11px;
+                    font-size: 13px;
                     text-transform: uppercase;
                     top: 62px;
                     right: 62px;
@@ -142,7 +142,7 @@ a{
                 }
                 .perfil{
                     color: #fff;
-                    font-size: 11px;
+                    font-size: 13px;
                     text-transform: uppercase;
                     top: 46px;
                     right: 74px;
