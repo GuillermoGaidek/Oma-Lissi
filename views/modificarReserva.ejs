@@ -1,0 +1,20 @@
+<%- include("header") -%>
+<h1>Modificar reserva</h1>
+<form action="/reservas/modificar/<%= detalle[0].cod_reserva %>" method="POST">
+  <div>
+    <label for="">Desde</label>
+    <input type="date" name="desde" value="<%= detalle[0].fecha_entrada %>">
+  </div>
+  <div>
+    <label for="">Hasta</label>
+    <input type="date" name="hasta" value="<%= detalle[0].fecha_salida %>">
+  </div>
+  <div>
+    <label for="">Cantidad de Personas</label>
+    <input type="number" name="cantidadPersonas" value="<%= detalle[0].cant_personas %>">
+  </div> 
+  <div>
+    <button type="submit">Siguiente</button>
+  </div>
+</form>
+<%- include("footer") -%>
