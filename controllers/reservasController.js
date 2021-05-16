@@ -80,16 +80,27 @@ let reservasController = {
         console.log(montoSeña);
 
         let sql1 = `UPDATE oma_lissi.reservas SET monto_total = ${montoTotal},monto_seña = ${montoSeña} WHERE cod_reserva = ${req.params.id};`;
-        const insertRes= await db.sequelize.query(sql1,{type: QueryTypes.UPDATE});
-        console.log(insertRes);
+        const updateRes= await db.sequelize.query(sql1,{type: QueryTypes.UPDATE});
+        console.log(updateRes);
 
         let sql2 = `UPDATE oma_lissi.reservas_tiene_cabañas SET cant_personas = ${req.body.cantidadPersonas},fecha_entrada = '${req.body.desde}',fecha_salida = '${req.body.hasta}' WHERE cod_reserva = ${req.params.id};`;
-        const insertResCab= await db.sequelize.query(sql2,{type: QueryTypes.UPDATE});
-        console.log(insertResCab);
+        const updateResCab= await db.sequelize.query(sql2,{type: QueryTypes.UPDATE});
+        console.log(updateResCab);
         
         req.session.justModified = true;
         
         res.redirect(`/reservas/listado/${req.params.id}`);
+    },
+    borrar: async function(req,res) {
+        let sql1 = `DELETE FROM oma_lissi.reservas_tiene_cabañas WHERE cod_reserva = ${req.params.id};`;
+        const deleteRes1 = await db.sequelize.query(sql1,{type: QueryTypes.DELETE});
+        console.log(deleteRes1);
+        
+        let sql2 = `DELETE FROM oma_lissi.reservas WHERE cod_reserva = ${req.params.id};`;
+        const deleteRes2 = await db.sequelize.query(sql2,{type: QueryTypes.DELETE});
+        console.log(deleteRes2);
+
+        res.render("borrarReserva",{usuarioLogeado: req.session.usuarioLogeado,codRes:req.params.id});
     }
 }
 

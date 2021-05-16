@@ -16,7 +16,6 @@ router.get("/modificar/:id",logMiddle,reservasController.modificar);
 router.post("/modificar/:id",logMiddle,reservasController.guardarModificacion);
 
 // Delete
-router.get("/modificar/:id",logMiddle,reservasController.modificar);
-router.post("/modificar/:id",logMiddle,reservasController.guardarModificacion);
+router.get("/borrar/:id",logMiddle,reservasController.borrar);
 
 module.exports = router;
