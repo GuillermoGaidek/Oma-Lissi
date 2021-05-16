@@ -4,13 +4,24 @@
     <h1>Reserva creada exitosamente!</h1>
 <% } %>
 
+<% if(justModified == true){ %>
+    <h1>Reserva modificada exitosamente!</h1>
+<% } %>
+
 <h1>Código de reserva <%= detalle[0].cod_reserva %></h1>
-    <ul>
-        <li>Fecha de entrada: <%= detalle[0].fecha_entrada %></li>
-        <li>Fecha de salida: <%= detalle[0].fecha_salida %></li>
-        <li>Cantidad de Personas:<%= detalle[0].cant_personas %></li>
-        <li>Monto Total: <%= detalle[0].monto_total %></li>
-        <li>Seña: <%= detalle[0].monto_seña %></li>
-        <li>Fecha de creación: <%= detalle[0].fecha_creacion_reserva %></li>
-    </ul>
+<ul>
+    <li>Fecha de entrada: <%= detalle[0].fecha_entrada %></li>
+    <li>Fecha de salida: <%= detalle[0].fecha_salida %></li>
+    <li>Cantidad de Personas:<%= detalle[0].cant_personas %></li>
+    <li>Monto Total: <%= detalle[0].monto_total %></li>
+    <li>Seña: <%= detalle[0].monto_seña %></li>
+    <li>Fecha de creación: <%= detalle[0].fecha_creacion_reserva %></li>
+</ul>
+
+<% if(justCreated != true && justModified != true){ %>
+    <a href="/reservas/modificar/<%= detalle[0].cod_reserva %>">
+        <button>Modificar</button>
+    </a>
+<% } %>
+
 <%- include("footer") -%></div>

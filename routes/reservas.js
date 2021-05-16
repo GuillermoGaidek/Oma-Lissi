@@ -6,11 +6,17 @@ var logMiddle = require('../middlewares/LogMiddleware');
 // Create
 router.get("/crear",logMiddle,reservasController.mostrar);
 router.post("/crear",logMiddle,reservasController.guardar);
-router.post("/crearResumen",logMiddle,reservasController.confirmar);
 
 // Read
 router.get("/listado",logMiddle,reservasController.listar);
 router.get("/listado/:id",logMiddle,reservasController.listarDetalles);
 
+// Update
+router.get("/modificar/:id",logMiddle,reservasController.modificar);
+router.post("/modificar/:id",logMiddle,reservasController.guardarModificacion);
+
+// Delete
+router.get("/modificar/:id",logMiddle,reservasController.modificar);
+router.post("/modificar/:id",logMiddle,reservasController.guardarModificacion);
 
 module.exports = router;
