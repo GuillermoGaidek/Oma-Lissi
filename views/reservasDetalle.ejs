@@ -23,9 +23,9 @@
         <button>Modificar</button>
     </a>
 
-    <a href="/reservas/borrar/<%= detalle[0].cod_reserva %>">
-        <button>Borrar</button>
-    </a>
+    <form action="/reservas/borrar/<%= detalle[0].cod_reserva %>" method="POST">
+        <button type="submit">Borrar</button>
+    </form>
 <% } %>
 
 <%- include("footer") -%></div>
