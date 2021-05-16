@@ -36,10 +36,15 @@ let reservasController = {
         res.redirect(`/reservas/listado/${obtenerCodRes[0].cod_reserva}`);
     },
     listar: async function(req,res){
-        let sql = `SELECT r.cod_reserva FROM oma_lissi.reservas as r LEFT JOIN oma_lissi.clientes as c on r.dni=c.dni WHERE c.mail = '${req.session.usuarioLogeado}';`;
-        const listado= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
-        console.log(listado);
-        res.render("reservasListado",{listado:listado,usuarioLogeado: req.session.usuarioLogeado});
+        try{
+            let sql = `SELECT r.cod_reserva FROM oma_lissi.reservas as r LEFT JOIN oma_lissi.clientes as c on r.dni=c.dni WHERE c.mail = '${req.session.usuarioLogeado}';`;
+            const listado= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
+            console.log(listado);
+            res.render("reservasListado",{listado:listado,usuarioLogeado: req.session.usuarioLogeado});
+        }catch(err){
+            console.error(err);
+            res.send("Hubo un error")
+        }
     },
     listarDetalles: async function(req,res){
         let sql = `SELECT DISTINCT r.cod_reserva,r.monto_total,r.monto_seña,r.fecha_creacion_reserva,sum(cant_personas) as cant_personas,rtc.fecha_entrada,rtc.fecha_salida
