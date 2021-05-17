@@ -8,7 +8,7 @@ router.get("/register",notLogMiddle,usuariosController.registrar);
 router.post("/register",usuariosController.guardar);
 
 // Login
-router.get("/login",notLogMiddle,usuariosController.login);//Si ya esta logeado que en el header en vez de iniciar sesion y registrarse que aparezca el perfil con el CRUD.
+router.get("/login",notLogMiddle,usuariosController.login);
 router.post("/login",usuariosController.validarLogin);
 
 // Perfil

@@ -20,7 +20,7 @@ a{
     padding: 0 50px;
 }
     .header-home{
-        background: url(/images/f1.png);
+        background: url(/images/43398.png);
         background-position:center;
         background-size: cover;
         display: flex;
@@ -38,7 +38,7 @@ a{
         margin-bottom: 5px;
    }
         .menu-home{
-            background: rgba(131, 124, 124, 0.349);
+            background: rgba(134, 186, 221, 0.788);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,7 +74,7 @@ a{
                 }
 
                 .logo-home a:hover{
-                    color:#4e4d4d;
+                    color:#9b9797;
                 }
 
             .nav{
@@ -96,7 +96,7 @@ a{
                 }
                 
                 .nav-home a:hover{
-                    color:#7c7a7a;
+                    color:#4e4d4d;
                 }
 
                 .user{
@@ -107,14 +107,14 @@ a{
                 #user-icon{
                     font-size: 32px;
                     position: absolute;
-                    right: 102px;
+                    right: 105px;
                     top: 8px;
                     color:#fff; 
                 }
                 #user-icon-home{
                     font-size: 32px;
                     position: absolute;
-                    right: 102px;
+                    right: 105px;
                     top: 8px;
                     color:#fff; 
                 }
