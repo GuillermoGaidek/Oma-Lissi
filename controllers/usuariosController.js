@@ -20,7 +20,7 @@ let usuariosController = {
             res.render("usuarioCreado",{usuarioLogeado: req.session.usuarioLogeado});
         }catch(err){
             console.error(err);
-            res.send("Hubo un error")
+            res.send("Hubo un error al registrar el usuario")
         }
     },
     login: function(req,res) {
@@ -29,27 +29,33 @@ let usuariosController = {
     validarLogin: async function(req,res) {
         try{
             let sql = `SELECT mail,contraseña FROM oma_lissi.clientes WHERE mail='${req.body.email}';`;
-
-            const credenciales= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
-            let validacion = bcrypt.compareSync(req.body.contraseña,credenciales[0].contraseña);
-            console.log(req.body.contraseña);
-            console.log(bcrypt.hashSync(req.body.contraseña,10));
-            console.log(credenciales[0].contraseña);
-            console.log(validacion);
-
-            if(validacion){
-                req.session.usuarioLogeado = credenciales[0].mail;
-                res.render("perfil",{usuarioLogeado: req.session.usuarioLogeado});
-            }else{
-                res.render("login",{errors:[
-                    {msg: "Credenciales inválidas"}
-                ],
-                usuarioLogeado: req.session.usuarioLogeado});
+            var credenciales= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
+            if(credenciales.length == 0){
+                throw "Usuario inválido";
             }
-        }catch(err){
-            console.error(err);
-            res.send("Hubo un error")
-        }  
+        }
+        catch(err){
+            res.render("login",{errors:[
+                {msg: err}
+            ],
+            usuarioLogeado: req.session.usuarioLogeado});
+        }
+        
+        let validacion = bcrypt.compareSync(req.body.contraseña,credenciales[0].contraseña);
+        console.log(req.body.contraseña);
+        console.log(bcrypt.hashSync(req.body.contraseña,10));
+        console.log(credenciales[0].contraseña);
+        console.log(validacion);
+
+        if(validacion){
+            req.session.usuarioLogeado = credenciales[0].mail;
+            res.render("perfil",{usuarioLogeado: req.session.usuarioLogeado});
+        }else{
+            res.render("login",{errors:[
+                {msg: "Contraseña inválida"}
+            ],
+            usuarioLogeado: req.session.usuarioLogeado});
+        }
     },
     perfil: function(req,res){
         res.render("perfil",{usuarioLogeado: req.session.usuarioLogeado});
