@@ -13,6 +13,6 @@ router.post("/login",usuariosController.validarLogin);
 
 // Perfil
 router.get("/perfil",logMiddle,usuariosController.perfil);
-
+router.get("/perfil/:email",logMiddle,usuariosController.misDatos);
 
 module.exports = router;

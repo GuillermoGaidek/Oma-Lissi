@@ -59,6 +59,13 @@ let usuariosController = {
     },
     perfil: function(req,res){
         res.render("perfil",{usuarioLogeado: req.session.usuarioLogeado});
+    },
+    misDatos: async function(req,res){
+        let sql = `SELECT dni,nombre,apellido,telefono,mail,ocupacion,cuenta_bancaria FROM oma_lissi.clientes WHERE mail='${req.session.usuarioLogeado}';`;
+        const obtenerDatos= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
+        console.log(obtenerDatos);
+
+        res.render("misDatos",{usuarioLogeado: req.session.usuarioLogeado,datos: obtenerDatos});
     }
 }
 module.exports = usuariosController;
