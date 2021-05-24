@@ -15,4 +15,7 @@ router.post("/login",usuariosController.validarLogin);
 router.get("/perfil",logMiddle,usuariosController.perfil);
 router.get("/perfil/:email",logMiddle,usuariosController.misDatos);
 
+// Cerrar Sesión
+router.post("/perfil/salir",logMiddle,usuariosController.salir);
+
 module.exports = router;

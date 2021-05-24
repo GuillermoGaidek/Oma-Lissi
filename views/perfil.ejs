@@ -3,4 +3,7 @@
 <a href="/usuarios/perfil/<%= usuarioLogeado %> "><h2>Mis Datos</h2></a>
 <a href="/reservas/crear"><h2>Crear Reserva</h2></a>
 <a href="/reservas/listado"><h2>Mis Reservas</h2></a>
+<form action="/usuarios/perfil/salir" method="POST">
+    <button type="submit">Cerrar Sesión</button>
+</form>
 <%- include("footer") -%></div>

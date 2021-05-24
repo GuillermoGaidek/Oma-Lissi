@@ -1,5 +1,14 @@
 <%- include("header") -%>
 <h1>Registrarse</h1>
+
+<% if(typeof errors != "undefined"){ %> 
+  <ul>
+    <% for(let i=0;i<errors.length;i++){ %> 
+      <li style="color: red;"><%= errors[i].msg %></li>
+    <% } %> 
+  </ul>    
+<% } %> 
+
 <form action="/usuarios/register" method="POST">
   <div>
     <label for="">DNI</label>

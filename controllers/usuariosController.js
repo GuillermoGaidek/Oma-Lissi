@@ -12,15 +12,15 @@ let usuariosController = {
             const password = bcrypt.hashSync(req.body.contraseña,10);
 
             let sql = `INSERT INTO oma_lissi.clientes (dni,nombre,apellido,telefono,mail,ocupacion,contraseña,fecha_creacion_cliente) VALUES ('${req.body.dni}','${req.body.nombre}','${req.body.apellido}','${req.body.telefono}','${req.body.email}','${req.body.ocupacion}','${password}','${today}');`;
-            
             const registrarse= await db.sequelize.query(sql,{type: QueryTypes.INSERT});
             console.log(registrarse);
             req.session.usuarioLogeado = req.body.email;
-
             res.render("usuarioCreado",{usuarioLogeado: req.session.usuarioLogeado});
         }catch(err){
-            console.error(err);
-            res.send("Hubo un error al registrar el usuario")
+            res.render("registrarUsuario",{errors:[
+                {msg: "El usuario ya existe"}
+            ],
+            usuarioLogeado: req.session.usuarioLogeado});
         }
     },
     login: function(req,res) {
@@ -33,8 +33,7 @@ let usuariosController = {
             if(credenciales.length == 0){
                 throw "Usuario inválido";
             }
-        }
-        catch(err){
+        }catch(err){
             res.render("login",{errors:[
                 {msg: err}
             ],
@@ -64,8 +63,11 @@ let usuariosController = {
         let sql = `SELECT dni,nombre,apellido,telefono,mail,ocupacion,cuenta_bancaria FROM oma_lissi.clientes WHERE mail='${req.session.usuarioLogeado}';`;
         const obtenerDatos= await db.sequelize.query(sql,{type: QueryTypes.SELECT});
         console.log(obtenerDatos);
-
         res.render("misDatos",{usuarioLogeado: req.session.usuarioLogeado,datos: obtenerDatos});
+    },
+    salir: function(req,res){
+        req.session.usuarioLogeado = undefined;
+        res.redirect("/");
     }
 }
 module.exports = usuariosController;
